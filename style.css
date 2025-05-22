@@ -1,0 +1,25 @@
+body { 
+    margin: 0;
+    background-color: rgb(235, 230, 230);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 8px 40px;
+}
+.nav_menu {
+    display: flex;
+}
+.nav_menu a {
+    color: white;
+    padding: 20px 30px;
+    text-decoration-line: none;
+}
+.nav_btn {
+    display: flex;
+    background-color: #FF6000;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
