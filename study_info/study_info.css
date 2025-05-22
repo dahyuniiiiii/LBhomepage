@@ -1,0 +1,139 @@
+/* 전체 설정 */
+* {
+    font-family: 'Pretendard Variable', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    border-bottom: 1px solid #616161;
+    padding: 8px 40px;
+}
+
+.nav_menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.nav_menu a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 20px 30px;
+    text-decoration-line: none;
+}
+
+.nav_btn {
+    display: flex;
+    background-color: #FF6000;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* study_info */
+.study_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    text-align: center;
+    gap: 20px;
+    letter-spacing: 2px;
+}
+
+.info-header p {
+    margin-top: 20px;
+    color: #ff6000;
+    font-size: 65px;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadein 2s forwards;
+    animation-play-state: paused;
+}
+
+.info-content p {
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadein 2s 2s forwards;
+    animation-play-state: paused;
+}
+
+.info-content-img {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.info-content-img img {
+    width: 800px;
+    height: 550px;
+    border-radius: 10px;
+    margin-top: 20px;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadein 2s 4s forwards;
+    animation-play-state: paused;
+}
+
+.info-content-img img:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.03);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.study_info:hover .info-header p,
+.study_info:hover .info-content p,
+.study_info:hover .info-content-img img {
+    animation-play-state: running;
+}
+
+/* footer */
+.footer {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100px;
+    background-color: black;
+    border-top: 1px solid #616161;
+    color: white;
+}
+
+.footer_top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
+}
