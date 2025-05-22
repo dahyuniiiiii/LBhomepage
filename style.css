@@ -1,6 +1,6 @@
 body { 
     margin: 0;
-    background-color: rgb(235, 230, 230);
+    background-color: black;
 }
 nav {
     display: flex;
@@ -8,6 +8,7 @@ nav {
     align-items: center;
     background-color: black;
     padding: 8px 40px;
+    border-bottom: 1px solid #616161;
 }
 .nav_menu {
     display: flex;
@@ -22,4 +23,202 @@ nav {
     background-color: #FF6000;
     padding: 5px 20px;
     border-radius: 5px;
+    font-weight: bold;
+}
+/* study_info */
+.study_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.info-header p {
+    margin-top: 20px;
+    color: #ff6000;
+    font-size: 50px;
+}
+
+.info-content p {
+    color: white;
+    font-size: 30px;
+}
+
+.info-content-img {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.info-content-img img {
+    width: 600px;
+    height: 450px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.info-content-img img:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.03);
+}
+
+/* project gallery */
+.title{
+    text-align: center;
+    color: #FF6000;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 70px;
+}
+
+.sub-title{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.currentGroup-btn{
+    background-color: #FF6000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    width: 60px;
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    padding: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.selectGroup-btn{
+    background-color: #FFFFFF;
+    color: #FF6000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    width: 60px;
+    height: 35px;
+    border: 0;
+    border-radius: 7px;
+    padding: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.grpBtn-align{
+    display: flex;
+    justify-content: center;
+}
+
+.img-style{
+    width: 420px;
+    height: 340px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/* about us */
+.intro {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 90px;
+}
+
+.buttons button{
+    font-size: 36px;
+    color: #FFFFFF;
+    width: 211px;
+    font-weight: lighter;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.buttons button:hover{
+    font-size: 36px;
+    color: #ff6000;
+    font-weight: bold;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid #ff6000;
+}
+
+.buttons button:focus{
+    font-size: 36px;
+    color: #ff6000;
+    font-weight: bold;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid #ff6000;
+}
+
+.people{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+.people div{
+    width: 200px;
+    height: 256px;
+    background-color: #242424;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.people img{
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+}
+/* footer */
+.footer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-top: 1px solid #616161;
+    color: white;
+    padding: 20px 0px;
+    gap:5px;
+}
+
+.footer_top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
 }
