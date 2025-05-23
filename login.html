@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멋사 로그인</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        <div class="nav_logo">
+            <img src="./image/logo.png">
+        </div>
+        <div class="nav_menu">
+            <a href="studyroon.html">StudyRoom</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="login.html"><button class="nav_btn">로그인</button></a>
+        </div>
+    </nav>    
+
+    <div class="login-container">
+        <h2>멋쟁이사자들의 공간에<br>오신 걸 환영합니다!</h2>
+        <h3>LIKE LIOIN X BU</h3>
+        <input type="text" id="id" placeholder="아이디를 입력하세요.">
+        <input type="password" id="password" placeholder="비밀번호를 입력하세요.">
+
+        <div class="login-options">
+            <label><input type="checkbox"> 로그인 상태 유지</label>
+        </div>
+
+        <button class="login-btn" onclick="login()">로그인</button>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer_top"><strong style="font-size: 30px;">BU LIKELION</strong> 
+                <a href="https://www.instagram.com/"><img src="./image/footer_lnstagram_logo.png" alt="인스타그램"></a>
+                <a href="https://www.likelion.net/"><img src="./image/footer_likelion_logo.png" alt="멋쟁이사자처럼"></a>
+            </div>
+            <a class="footer_bottom">
+                @ 2025 BU LIKELION STUDY. All rights reserved.
+            </a>
+        </div>
+    </footer>
+    <script>
+    function login() {
+      const id = document.getElementById('id').value;
+      const password = document.getElementById('password').value;
+
+      fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, password })
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('로그인 실패');
+        return res.json();
+      })
+      .then(data => {
+        alert('로그인 성공: ' + data.nickname + '님 환영합니다!');
+        // 이후 페이지 이동 또는 세션 처리
+      })
+      .catch(err => {
+        alert('로그인 실패: ' + err.message);
+      });
+    }
+  </script>
+</body>
+</html>
