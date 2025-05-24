@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./check-in.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav_logo">
+            <img src="./image/logo.png">
+        </div>
+        <div class="nav_menu">
+            <a href="studyroon.html">StudyRoom</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="login.html"><button class="nav_btn">로그인</button></a>
+        </div>
+    </nav>
+
+    <p><span id="date" class="date"></span></p>
+    <div class="check-container">
+        <p id="check" class="check">출석체크 하기</p>
+        <button class="check-button" onclick="markToday()">출석하기</button>
+    </div>
+
+    <p class="current-check">오늘의 참석현황</p>
+
+    <div class="current-container">
+        <div class="check-rate"></div>
+        <div class="studying"></div>
+        <div class="report"></div>
+    </div>
+
+    <p class="current-check">출결 내역</p>
+    <div class="cal-box">
+        <table class="calendar" id="calendar">
+            <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="1">1</td>
+                <td id="2">2</td>
+                <td id="3">3</td>
+            </tr>
+            <tr>
+                <td id="4">4</td>
+                <td id="5">5</td>
+                <td id="6">6</td>
+                <td id="7">7</td>
+                <td id="8">8</td>
+                <td id="9">9</td>
+                <td id="10">10</td>
+            </tr>
+            <tr>
+                <td id="11">11</td>
+                <td id="12">12</td>
+                <td id="13">13</td>
+                <td id="14">14</td>
+                <td id="15">15</td>
+                <td id="16">16</td>
+                <td id="17">17</td>
+            </tr>
+            <tr>
+                <td id="18">18</td>
+                <td id="19">19</td>
+                <td id0">20</td>
+                <td id="21">21</td>
+                <td id="22">22</td>
+                <td id="23">23</td>
+                <td id="24">24</td>
+            </tr>
+            <tr>
+                <td id="25">25</td>
+                <td id="26">26</td>
+                <td id="27">27</td>
+                <td id="28">28</td>
+                <td id="29">29</td>
+                <td id="30">30</td>
+                <td id="31">31</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer_top"><strong style="font-size: 30px;">BU LIKELION</strong>
+                <a href="https://www.instagram.com/"><img src="./image/footer_lnstagram_logo.png" alt="인스타그램"></a>
+                <a href="https://www.likelion.net/"><img src="./image/footer_likelion_logo.png" alt="멋쟁이사자처럼"></a>
+            </div>
+            <a class="footer_bottom">
+                @ 2025 BU LIKELION STUDY. All rights reserved.
+            </a>
+        </div>
+    </footer>
+    <script>
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+
+        document.getElementById('date').textContent = `${year}년 ${month}월 ${day}일`;
+
+        function markToday() {
+            const td = document.getElementById(day);
+            if (td) {
+                td.classList.add('attended');
+            }
+        }
+    </script>
+</body>
+
+</html>

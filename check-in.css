@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 8px 40px;
+    border-bottom: 1px solid #616161;
+}
+
+.nav_logo>img {
+    width: 40%;
+}
+
+.nav_menu {
+    display: flex;
+}
+
+.nav_menu a {
+    color: white;
+    padding: 20px 30px;
+    text-decoration-line: none;
+}
+
+.nav_btn {
+    display: flex;
+    background-color: #FF6000;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+
+.date {
+    color: #FFFFFF;
+    font-size: 64px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.check-container {
+    padding-left: 20px;
+}
+
+.check {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.check-button {
+    width: 202px;
+    height: 81px;
+    background-color: #FFFFFF;
+    color: #FF6000;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.check-button:hover {
+    width: 202px;
+    height: 81px;
+    background-color: #FF6000;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.current-check {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 50px;
+}
+
+.current-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+
+.calander p {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.check-rate {
+    width: 202px;
+    height: 135px;
+    background-color: #FF6000;
+    border-radius: 10px;
+}
+
+.studying {
+    width: 202px;
+    height: 135px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.report {
+    width: 202px;
+    height: 135px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.cal-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+table.calendar {
+    width: 1280px;
+    height: 500px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table.calendar th,
+table.calendar td {
+    border: 1px solid #333;
+    width: 180px;
+    height: 60px;
+    vertical-align: top;
+    font-size: 16px;
+    padding: 10px;
+}
+
+th {
+    background-color: grey;
+}
+
+.attended {
+    background-color: #FF6000;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+
+
+.footer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-top: 1px solid #ffffff;
+    color: white;
+    padding: 20px 0px;
+    gap: 5px;
+}
+
+.footer_top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
+}
