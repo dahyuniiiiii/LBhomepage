@@ -28,6 +28,24 @@ nav {
     border-radius: 5px;
     font-weight: bold;
 }
+.popup {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    background-color: #2D2D2D;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    display: none;
+}
+
+.popup .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
 /* study_info */
 .study_info {
     display: flex;

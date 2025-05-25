@@ -1,6 +1,23 @@
 const buttons = document.querySelectorAll(".buttons button");
 const people = document.querySelectorAll(".people > div");
 
+window.addEventListener('DOMContentLoaded', () => {
+  const user = localStorage.getItem('User');
+  if (user) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('user').innerText = user;
+    localStorage.removeItem('User'); 
+  }
+});
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+setTimeout(() => {
+  closePopup();
+}, 3000);
+
 window.addEventListener("DOMContentLoaded", () => {
   people.forEach(card => {
     const className = card.className;
