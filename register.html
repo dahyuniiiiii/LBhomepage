@@ -63,6 +63,7 @@
     </footer>
 <script>
     function register() {
+      const name = document.getElementById("name").value;
       const id = document.getElementById("id").value.trim();
       const pw = document.getElementById("password").value;
       const pw2 = document.getElementById("passwordConfirm").value;
@@ -70,7 +71,7 @@
       const emailDomain = document.getElementById("emailDomain").value;
       const phone = document.getElementById("phone").value.trim();
 
-      if (!id || !pw || !pw2 || !emailFront || !emailDomain || !phone) {
+      if (!name || !id || !pw || !pw2 || !emailFront || !emailDomain || !phone) {
         alert("모든 항목을 입력하세요.");
         return;
       }
@@ -83,13 +84,14 @@
       const email = `${emailFront}@${emailDomain}`;
 
       const userData = {
+        name,
         id,
         password: pw,
         email,
         phone
       };
 
-      fetch("http://localhost:3000/api/register", {
+      fetch("http://localhost:9090/join", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData)
@@ -99,10 +101,11 @@
         return res.json();
       })
       .then(data => {
-        alert("회원가입 완료! 환영합니다.");
+        alert("회원가입 완료!");
+        window.location.href = "/login"; 
       })
       .catch(err => {
-        alert("에러 발생: " + err.message);
+        alert("회원가입 실패: " + err.message);
       });
     }
   </script>
