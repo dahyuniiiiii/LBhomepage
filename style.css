@@ -263,6 +263,85 @@ nav {
     height: 110px;
     margin-bottom: 10px;
 }
+/* annual schedule */
+
+.annual-schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.annual-schedule-title {
+    color: #FF6000;
+    font-size: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 200px;
+}
+
+.annual-schedule {
+    margin-left: 10px;    
+}
+
+/* stack-and-tools */
+.stack-and-tools{
+    margin-top: 200px;
+    text-align: center;
+    color: #FF6000;
+}
+.stack-and-tools h2{
+    font-size: 56px;
+    justify-content: center;
+    display: flex;
+}
+.stack-and-tools p{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.stack-design-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 150px;
+}
+
+.stack-design-container .stack-text, .design-text{
+    width: 130px;
+    height: 60px;
+    background-color: #FF6000;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-container, .design-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.design-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 543px;
+}
+.stack-container img,
+.design-container img {
+    height: 60px; /* 아이콘 크기도 줄이기 */
+}
+.figmaImg{
+    margin-left: 15px;
+}
 /* footer */
 .footer {
     display: flex;
