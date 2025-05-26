@@ -337,7 +337,7 @@ nav {
 }
 .stack-container img,
 .design-container img {
-    height: 60px; /* 아이콘 크기도 줄이기 */
+    height: 60px;
 }
 .figmaImg{
     margin-left: 15px;
