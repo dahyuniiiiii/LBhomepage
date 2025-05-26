@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리뷰's</title>
-    <link rel="stylesheet" href="review.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>리뷰's</title>
+  <link rel="stylesheet" href="review.css" />
 </head>
 <body>
     <nav>
         <div class="nav_logo">
-            <img src="./image/logo.png">
+        <img src="./image/logo.png" />
         </div>
         <div class="nav_menu">
-            <a href="studyroon.html">StudyRoom</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="login.html"><button class="nav_btn">로그인</button></a>
+        <a href="studyroon.html">StudyRoom</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="login.html"><button class="nav_btn">로그인</button></a>
         </div>
     </nav>
 
-    <div class=Review-container>
+    <div class="Review-container">
         <h2>Reviews</h2>
-        <button class="review-btn">리뷰 작성하기</button>
+        <button class="review-btn" onclick="openForm()">리뷰 작성하기</button>
+    </div>
+
+  
+    <div class="review-form" id="reviewForm">
+        <div class="form-content"> 
+        <div class="form-header">
+            <h3>스터디 리뷰 작성</h3>
+            <span class="close-btn" onclick="closeForm()">×</span>
+        </div>
+
+        <label for="studyType">스터디 유형</label>
+        <select id="studyType">
+            <option>스터디 선택</option>
+            <option>코딩테스트 스터디</option>
+            <option>기술블로그 스터디</option>
+            <option>포토폴리오 제작 스터디</option>
+            <option>HTML 미니해커톤</option>
+            <option>5월 js 미니해커톤</option>
+            <option>js프로젝트 스터디</option>
+        </select>
+
+        <label for="reviewText">후기</label>
+        <textarea id="reviewText" rows="5" placeholder="후기를 입력하세요."></textarea>
+
+        <button class="submit-btn">리뷰 등록</button>
+        </div>
     </div>
 
 
 
     <footer>
         <div class="footer">
-            <div class="footer_top"><strong style="font-size: 30px;">BU LIKELION</strong> 
-                <a href="https://www.instagram.com/"><img src="./image/footer_lnstagram_logo.png" alt="인스타그램"></a>
-                <a href="https://www.likelion.net/"><img src="./image/footer_likelion_logo.png" alt="멋쟁이사자처럼"></a>
-            </div>
-            <a class="footer_bottom">
-                @ 2025 BU LIKELION STUDY. All rights reserved.
-            </a>
+        <div class="footer_top">
+            <strong style="font-size: 30px;">BU LIKELION</strong>
+            <a href="https://www.instagram.com/"
+            ><img src="./image/footer_lnstagram_logo.png" alt="인스타그램"
+            /></a>
+            <a href="https://www.likelion.net/"
+            ><img src="./image/footer_likelion_logo.png" alt="멋쟁이사자처럼"
+            /></a>
         </div>
-    </footer>    
+        <a class="footer_bottom">
+            @ 2025 BU LIKELION STUDY. All rights reserved.
+        </a>
+        </div>
+    </footer>
+
 </body>
+<script src="review.js"></script>
 </html>
