@@ -44,9 +44,7 @@
 
         <label>전화번호</label>
         <input type="text" id="phone" placeholder="-를 제외한 번호를 입력하세요.">
-<a href="./login.html"> <!-- 잠시넣음 -->
         <button class="submit-btn" onclick="register()">회원가입하기</button>
-        </a>
     </div>
 
 
@@ -85,25 +83,25 @@
       const email = `${emailFront}@${emailDomain}`;
 
       const userData = {
-        name,
-        id,
+        nickname: name,
+        userId: id,
         password: pw,
         email,
         phone
       };
 
-      fetch("http://localhost:9090/join", {
+      fetch("http://localhost:9090/api/join", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData)
       })
       .then(res => {
-        if (!res.ok) throw new Error("회원가입 실패");
+        if (!res.ok) throw new Error("응담 실패: "+res.status);
         return res.json();
       })
       .then(data => {
         alert("회원가입 완료!");
-        window.location.href = "/login"; 
+        window.location.href = "./index.html"; 
       })
       .catch(err => {
         alert("회원가입 실패: " + err.message);
