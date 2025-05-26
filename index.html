@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="popup" class="popup">
+    <span class="closeBtn" onclick="closePopup()">×</span>
+    <p><strong id="user"></strong>님, 환영합니다~</p>
+    <p>“오늘도 멋진 하루 보내세요~~~~~~~~~오다현개이쁨”</p>
+</div>
+
     <nav>
         <div class="nav_logo">
             <img src="./image/logo.png">
@@ -42,13 +48,57 @@
         </div>
     </div>
     <div style="background-color: #F1F1F1; height: 1000px;">
+        <div class="modal-bg hidden">
+            <div class="modal">
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="modal-title">Sagopalgo</p>
+                    <button class="close-btn">X</button>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <img src="./image/sagopalgo.png" class="modal-img">
+                </div>
+                <div class="modal-exp-box">
+                    <h2 class="modal-semi-title">한 줄 소개</h2>
+                    <p class="modal-exp-text">누구나 자유롭게 상품을 사고팔 수 있는 중고거래 플랫폼</p>
+                    <h2 class="modal-semi-title2">프로젝트 설명</h2>
+                    <p class="modal-exp-text2">HTML과 CSS를 활용한 실전 웹 개발 프로젝트 입니다. 
+                        실무 역량 강화를 목표로 했으며, 중고거래 플랫폼이라는 친숙한 주제를 통해 핵심기능과 구조 구현 능력을 자연스럽게 익히는데 중점을 두었습니다.</p>
+                        <h2 class="modal-semi-title2">프로젝트 기간</h2>
+                        <p class="modal-exp-text">2025.04.12 ~ 2025.05.17</p>
+                </div>
+                <div class="modal-exp-box">
+                    <h2 class="modal-semi-title">팀 구성</h2>
+                    <p class="modal-exp-text">오다현, 정세진, 최명진, 장하늘</p>
+                    <div style="display: flex; align-items: center;">
+                        <h2 class="modal-semi-title3">기획</h2>
+                        <p class="modal-exp-text3">오다현</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <h2 class="modal-semi-title3">디자인</h2>
+                        <p class="modal-exp-text3">장하늘</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <h2 class="modal-semi-title3">프론트엔드</h2>
+                        <p class="modal-exp-text3">오다현, 정세진, 최명진, 장하늘</p>
+                    </div>
+                    <div>
+                        <h2 class="modal-semi-title4">기술 스택</h2>
+                        <p class="modal-exp-text">HTML, CSS, Figma, Git</p>
+                    </div>
+                </div>
+                <div class="modal-exp-box2">
+                    <h2 class="modal-semi-title">프로젝트 링크</h2>
+                    <p class="modal-exp-text">배포 링크: </p>
+                </div>
+            </div>
+        </div>
         <div style="height: 1px;"></div>
         <h2 class="gallery-title">13기 프로젝트 갤러리</h2>
         <p class="gallery-sub-title">함께 만든 시간, 함께 남기는 기록</p>
         <div style="display: flex; justify-content: center; margin-top: 10px;">
             <div class="img-box">
                 <img src="./image/sagopalgo.png" class="inner-img">
-                <p class="project-name">Sagopalgo</p>
+                <button class="project-btn">Sagopalgo</button>
                 <p class="project-exp">편리하고 안전한 중고거래를 위한 웹사이트</p>
             </div>
             <div class="img-box"></div>
@@ -60,6 +110,7 @@
             <div class="img-box"></div>
         </div>
     </div>
+<div class="aboutus">
         <section class="intro">
         <a style="font-size: 64px; font-weight:bold; color:#FF6000;padding-bottom:20px;">About us</a>
         <a style="font-size: 30px; font-weight:bold; color:#FFFFFF">"기술로 연결되고, 열정으로 성장하는"</a>
@@ -67,61 +118,68 @@
         <a style="font-size: 24px; font-weight:bold; color:#FF6000;">BU X LIKELION</a>
     </section>
     <section class="buttons">
-        <button id="PM" class="PM">PM</button>
+        <button id="PM" class="PM active">PM</button>
         <button id="DE" class="DE">DE</button>
         <button id="FE" class="FE">FE</button>
         <button id="BE" class="BE">BE</button>
     </section>
     <section class="people">
+        <div class="PM-manage">
+            <img src="./image/basic-profile.png">
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">FE운영진</a>
+            <a style="color:#FFFFFF;font-size: 20px;">오다현</a>
+            <a style="color:#FFFFFF;font-size: 20px;">첨단IT학부</a>
+        </div>
         <div class="FE-manage">
             <img src="./image/basic-profile.png">
             <a style="color: #FF6000;font-size:24px;font-weight:bold">FE운영진</a>
-            <a style="color:#FFFFFF;font: size 20px;">오다현</a>
-            <a style="color:#FFFFFF;font: size 20px;">첨단IT학부</a>
+            <a style="color:#FFFFFF;font-size:  20px;">오다현</a>
+            <a style="color:#FFFFFF;font-size:  20px;">첨단IT학부</a>
         </div>
         <div class="FE-manage">
             <img src="./image/basic-profile.png">
             <a style="color: #FF6000;font-size:24px;font-weight:bold">FE운영진</a>
-            <a style="color:#FFFFFF;font: size 20px;">정예준</a>
-            <a style="color:#FFFFFF;font: size 20px;">컴퓨터공학부</a>
+            <a style="color:#FFFFFF;font-size:  20px;">정예준</a>
+            <a style="color:#FFFFFF;font-size:  20px;">컴퓨터공학부</a>
         </div>
         <div class="FE-babylion">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">아기사자</a>
-            <a style="color:#FFFFFF;font: size 20px;">최명진</a>
-            <a style="color:#FFFFFF;font: size 20px;">컴퓨터공학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">FE아기사자</a>
+            <a style="color:#FFFFFF;font-size:  20px;">최명진</a>
+            <a style="color:#FFFFFF;font-size:  20px;">컴퓨터공학부</a>
         </div>
         <div class="FE-babylion">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">아기사자</a>
-            <a style="color:#FFFFFF;font: size 20px;">정윤재</a>
-            <a style="color:#FFFFFF;font: size 20px;">첨단IT학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">FE아기사자</a>
+            <a style="color:#FFFFFF;font-size:  20px;">정윤재</a>
+            <a style="color:#FFFFFF;font-size:  20px;">첨단IT학부</a>
         </div>
         <div class="FE-babylion">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">아기사자</a>
-            <a style="color:#FFFFFF;font: size 20px;">김충</a>
-            <a style="color:#FFFFFF;font: size 20px;">컴퓨터공학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">FE아기사자</a>
+            <a style="color:#FFFFFF;font-size: 20px;">김충</a>
+            <a style="color:#FFFFFF;font-size:  20px;">컴퓨터공학부</a>
         </div>
         <div class="FE-babylion">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">아기사자</a>
-            <a style="color:#FFFFFF;font: size 20px;">정세진</a>
-            <a style="color:#FFFFFF;font: size 20px;">첨단IT학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">FE아기사자</a>
+            <a style="color:#FFFFFF;font-size:  20px;">정세진</a>
+            <a style="color:#FFFFFF;font-size:  20px;">첨단IT학부</a>
         </div>
         <div class="DE-manage">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">운영진</a>
-            <a style="color:#FFFFFF;font: size 20px;">장하늘</a>
-            <a style="color:#FFFFFF;font: size 20px;">첨단IT학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">DE운영진</a>
+            <a style="color:#FFFFFF;font-size:  20px;">장하늘</a>
+            <a style="color:#FFFFFF;font-size:  20px;">첨단IT학부</a>
         </div>
         <div class="BE-babylion">
             <img src="./image/basic-profile.png">
-            <a style="color: #FF6000;font-size:24px;font-weight:bold">아기사자</a>
-            <a style="color:#FFFFFF;font: size 20px;">김양현</a>
-            <a style="color:#FFFFFF;font: size 20px;">첨단IT학부</a>
+            <a style="color: #FF6000;font-size:24px;font-weight:bold">BE아기사자</a>
+            <a style="color:#FFFFFF;font-size:  20px;">김양현</a>
+            <a style="color:#FFFFFF;font-size:  20px;">첨단IT학부</a>
         </div>
     </section>
+</div>
     <footer>
         <div class="footer">
             <div class="footer_top"><strong style="font-size: 30px;">BU LIKELION</strong> 

@@ -28,6 +28,24 @@ nav {
     border-radius: 5px;
     font-weight: bold;
 }
+.popup {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    background-color: #2D2D2D;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    display: none;
+}
+
+.popup .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
 /* study_info */
 .study_info {
     display: flex;
@@ -52,6 +70,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-bottom: 100px;
 }
 
 .info-content-img img {
@@ -87,42 +106,6 @@ nav {
     margin: 0;
 }
 
-.currentGroup-btn{
-    background-color: #FF6000;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    width: 60px;
-    height: 35px;
-    border: 0;
-    border-radius: 7px;
-    padding: 0;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.selectGroup-btn{
-    background-color: #FFFFFF;
-    color: #FF6000;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    width: 60px;
-    height: 35px;
-    border: 0;
-    border-radius: 7px;
-    padding: 0;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.grpBtn-align{
-    display: flex;
-    justify-content: center;
-}
-
 .img-box{
     width: 420px;
     height: 348px;
@@ -131,6 +114,7 @@ nav {
     margin-top: 40px;
     margin-left: 15px;
     margin-right: 15px;
+    box-shadow: 0px 4px 15px 0px rgba(60, 64, 67, 0.25);
 }
 
 .inner-img{
@@ -141,15 +125,17 @@ nav {
     margin-bottom: 0;
 }
 
-.project-name{
+.project-btn{
     color: #000000;
+    background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 24px;
     margin-left: 30px;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     padding: 0;
+    border: 0;
 }
 
 .project-exp{
@@ -158,17 +144,187 @@ nav {
     font-weight: 400;
     font-size: 16px;
     margin-left: 30px;
-    margin-top: 12px;
+    margin-top: 8px;
     margin-bottom: 5px;
     padding: 0;
 }
+
+.modal-bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(76, 76, 76, 0.7);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden{
+    background-color: #FFFFFF;
+    visibility: hidden;
+}
+
+.close-btn{
+    color: #F6F6F6;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 0;
+    border: 0;
+    margin: 0px;
+    margin-right: 16px;
+    margin-top: 10px;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #292929;
+    border-radius: 15px;
+    width: 510px;
+    height: 1000px;
+}
+
+.modal-title{
+    color: #F6F6F6;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.modal-img{
+    width: 472px;
+    height: 266px;
+    border: 0;
+    border-radius: 15px;
+    margin-top: 26px;
+}
+
+.modal-exp-box{
+    width: 472px;
+    height: 255px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #464646;
+    margin-left: 19px;
+    margin-top: 22px;
+}
+
+.modal-exp-box2{
+    width: 472px;
+    height: 88px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #464646;
+    margin-left: 19px;
+    margin-top: 22px;
+}
+
+.modal-semi-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #F6F6F6;
+    margin-left: 24px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+.modal-semi-title2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #F6F6F6;
+    margin-left: 24px;
+    margin-top: 12px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.modal-semi-title3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #F6F6F6;
+    margin-left: 24px;
+    margin-top: 12px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.modal-semi-title4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #F6F6F6;
+    margin-left: 24px;
+    margin-top: 15px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.modal-exp-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F6F6F6;
+    margin: 0;
+    margin-left: 24px;
+    padding-top: 8px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.modal-exp-text2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F6F6F6;
+    margin: 0;
+    margin-left: 24px;
+    margin-right: 26px;
+    padding-top: 8px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.modal-exp-text3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F6F6F6;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 /* about us */
+.aboutus{
+    background-color: #3C3C3C;
+    padding: 80px 50px;
+}
 .intro {
-    margin-top: 70px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
+    padding: 50px;
 }
 
 .buttons {
@@ -184,16 +340,16 @@ nav {
     color: #FFFFFF;
     width: 211px;
     font-weight: lighter;
-    background-color: black;
     border: none;
     border-bottom: 1px solid #FFFFFF;
+    background-color: #3C3C3C;
 }
 
 .buttons button:hover{
     font-size: 36px;
     color: #ff6000;
     font-weight: bold;
-    background-color: black;
+    background-color: #3C3C3C;
     border: none;
     border-bottom: 2px solid #ff6000;
 }
@@ -202,10 +358,16 @@ nav {
     font-size: 36px;
     color: #ff6000;
     font-weight: bold;
-    background-color: black;
+    background-color: #3C3C3C;
     border: none;
     border-bottom: 2px solid #ff6000;
 }
+.buttons button.active {
+  color: #FF6000;
+  border-bottom: 3px solid #FF6000;
+  font-weight: bold;
+}
+
 
 .people{
     width: 1000px;
@@ -236,7 +398,6 @@ nav {
 }
 /* footer */
 .footer {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
