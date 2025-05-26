@@ -27,6 +27,7 @@ nav {
     padding: 20px 30px;
     text-decoration-line: none;
 }
+
 .nav_btn {
     display: flex;
     background-color: #FF6000;
@@ -36,11 +37,11 @@ nav {
 }
 
 /* contributors */
-.contributors-container{
+.contributors-container {
     position: relative;
 }
 
-.contributors-container::before{
+.contributors-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -50,7 +51,8 @@ nav {
     background-color: #ff6000;
     z-index: -1;
 }
-.contributors-header{
+
+.contributors-header {
     padding-top: 30px;
     margin-bottom: 30px;
     color: white;
@@ -58,57 +60,65 @@ nav {
     line-height: 1.5;
 }
 
-.contributors-header strong{
+.contributors-header strong {
     font-size: 50px;
 }
 
-.contributors-header p{
+.contributors-header p {
     font-size: 20px;
     font-weight: bold;
 }
 
-.contributors-list{
+.contributors-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.contributors-list-item{
+.contributors-list-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
     color: black;
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+    margin-bottom: 30px;
 }
 
-.contributors-list-item-name{
-    font-size: 20px;
+.contributors-list-item-name {
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
 }
 
-.contributors-list-item-position{
-    font-size: 14px;
-    margin: 5px 0 0 0;
+.contributors-list-item-position {
+    font-size: 15px;
+    margin: 5px 0 10px 0;
 }
 
-.contributors-list-item-department{
-    width: 80px;
-    Line-height: 25px;
+.contributors-list-item-department { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
     background-color: #ff6000;
     border-radius: 20px;
     color: white;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 7px;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
-.contributors-footer{
+.contributors-footer {
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -125,7 +135,7 @@ nav {
     color: white;
     padding: 20px 0px;
     gap: 5px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .footer_top {
