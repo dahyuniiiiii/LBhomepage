@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리뷰's</title>
+    <title>리뷰 페이지</title>
     <link rel="stylesheet" href="review.css">
 </head>
 <body>
@@ -122,9 +122,35 @@
         </div>
     </section>
 
-    <div class=Review-container>
+    <div class="Review-container">
         <h2>Reviews</h2>
-        <button class="review-btn">리뷰 작성하기</button>
+        <button class="review-btn" onclick="openForm()">리뷰 작성하기</button>
+    </div>
+
+  
+    <div class="review-form" id="reviewForm">
+        <div class="form-content"> 
+        <div class="form-header">
+            <h3>스터디 리뷰 작성</h3>
+            <span class="close-btn" onclick="closeForm()">×</span>
+        </div>
+
+        <label for="studyType">스터디 유형</label>
+        <select id="studyType">
+            <option>스터디 선택</option>
+            <option>코딩테스트 스터디</option>
+            <option>기술블로그 스터디</option>
+            <option>포토폴리오 제작 스터디</option>
+            <option>HTML 미니해커톤</option>
+            <option>5월 js 미니해커톤</option>
+            <option>js프로젝트 스터디</option>
+        </select>
+
+        <label for="reviewText">후기</label>
+        <textarea id="reviewText" rows="5" placeholder="후기를 입력하세요."></textarea>
+
+        <button class="submit-btn">리뷰 등록</button>
+        </div>
     </div>
 
 
@@ -141,4 +167,5 @@
         </div>
     </footer>    
 </body>
+<script src="review.js"></script>
 </html>

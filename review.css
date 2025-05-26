@@ -96,31 +96,6 @@ nav {
 
 
 
-.Review-container {
-    font-size: 35px;  
-    margin: auto;
-    background-color: #000;
-    color: #ff6a00;
-    text-align: center;
-    border-radius: 10px;
-}
-.Review-container h2{
-    margin-top: 10px;
-}
-
-.review-btn {
-    background-color: #ff6a00;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 300px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    
-}
 /* 이번시즌 스터디*/
 .studyInfo{
     display: flex;
@@ -177,6 +152,107 @@ nav {
     border-bottom-right-radius: 12px;
 }
 
+.Review-container {
+    font-size: 35px;  
+    margin: auto;
+    background-color: #000;
+    color: #ff6a00;
+    text-align: center;
+    border-radius: 10px;
+}
+.Review-container h2{
+    margin-top: 10px;
+}
+
+.review-btn {
+    background-color: #ff6a00;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+}
+.review-form {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6); 
+    z-index: 1000;
+}
+
+
+.form-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    padding: 5px 30px 30px 30px;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+
+.close-btn {
+    position: absolute;
+    margin-left: 380px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.form-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form-content textarea {
+    width: 382.4px;
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.form-content select{
+    width: 400px;
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+
+.submit-btn {
+    margin-top: 20px;
+    background-color: #ff6a00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
 
 
 .footer {
