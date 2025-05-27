@@ -37,7 +37,7 @@ buttons.forEach(button => {
 
     people.forEach(card => {
       const className = card.className;
-      if (className.includes(`${selectedDept}-`)) {
+      if (className.includes(${selectedDept}-)) {
         card.style.display = "flex";
       } else {
         card.style.display = "none";

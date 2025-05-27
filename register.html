@@ -44,7 +44,6 @@
 
         <label>전화번호</label>
         <input type="text" id="phone" placeholder="-를 제외한 번호를 입력하세요.">
-<a href="./login.html"> <!-- 잠시넣음 -->
         <button class="submit-btn" onclick="register()">회원가입하기</button>
         </a>
     </div>
@@ -63,52 +62,55 @@
         </div>
     </footer>
 <script>
-    function register() {
-      const name = document.getElementById("name").value;
-      const id = document.getElementById("id").value.trim();
-      const pw = document.getElementById("password").value;
-      const pw2 = document.getElementById("passwordConfirm").value;
-      const emailFront = document.getElementById("emailFront").value.trim();
-      const emailDomain = document.getElementById("emailDomain").value;
-      const phone = document.getElementById("phone").value.trim();
+  function register() {
+    const name = document.getElementById("name").value;
+    const id = document.getElementById("id").value.trim();
+    const pw = document.getElementById("password").value;
+    const pw2 = document.getElementById("passwordConfirm").value;
+    const emailFront = document.getElementById("emailFront").value.trim();
+    const emailDomain = document.getElementById("emailDomain").value;
+    const phone = document.getElementById("phone").value.trim();
 
-      if (!name || !id || !pw || !pw2 || !emailFront || !emailDomain || !phone) {
-        alert("모든 항목을 입력하세요.");
-        return;
-      }
-
-      if (pw !== pw2) {
-        alert("비밀번호가 일치하지 않습니다.");
-        return;
-      }
-
-      const email = `${emailFront}@${emailDomain}`;
-
-      const userData = {
-        name,
-        id,
-        password: pw,
-        email,
-        phone
-      };
-
-      fetch("http://localhost:9090/join", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData)
-      })
-      .then(res => {
-        if (!res.ok) throw new Error("회원가입 실패");
-        return res.json();
-      })
-      .then(data => {
-        alert("회원가입 완료!");
-        window.location.href = "/login"; 
-      })
-      .catch(err => {
-        alert("회원가입 실패: " + err.message);
-      });
+    if (!name || !id || !pw || !pw2 || !emailFront || !emailDomain || !phone) {
+      alert("모든 항목을 입력하세요.");
+      return;
     }
-  </script>
+
+    if (pw !== pw2) {
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+
+    const email = `${emailFront}@${emailDomain}`;
+
+    const userData = {
+      nickname: name,
+      userId: id,
+      password: pw,
+      email,
+      phone
+    };
+
+    fetch("http://localhost:9090/api/member/join", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(userData),
+  credentials: 'include'
+})
+.then(res => {
+  if (!res.ok) throw new Error("응답 실패: " + res.status);
+  return res.json(); // 또는 res.text()
+})
+.then(data => {
+  console.log("응답 데이터:", data);
+  alert("회원가입 완료!");
+  window.location.href = "./index.html";
+})
+.catch(err => {
+  console.error("에러 발생:", err);
+  alert("회원가입 실패: " + err.message);
+});
+  }
+</script>
 </body>
 </html>

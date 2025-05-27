@@ -20,6 +20,8 @@ nav {
     color: white;
     padding: 20px 30px;
     text-decoration-line: none;
+    font-weight: bold;
+    font-size: 21px;
 }
 .nav_btn {
     display: flex;
@@ -27,32 +29,289 @@ nav {
     padding: 5px 20px;
     border-radius: 5px;
     font-weight: bold;
+    height: 40px;
+    width: 110px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+.popup {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    background-color: #2D2D2D;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    display: none;
 }
 
+.popup .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+.archive-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 300px;
+}
+.rule-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 200px;
+}
+
+.section-title {
+    color: hsl(25, 100%, 50%);
+    font-size: 48px;
+    margin-top: 150px;
+}
+
+.description {
+    font-size: 18px;
+    color: #ddd;
+    font-weight: bold;
+}
+
+.standard-title {
+    color: #ff6b00;
+    font-size: 48px;
+    margin-top: 200px;
+    padding-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.card {
+    background: white;
+    color: black;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px 10px rgba(255, 102, 0, 0.6);
+}
+
+.card p {
+    margin: 4px 0;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.card .warning {
+    font-weight: bold;
+    color: #ff4000;
+}
+
+
+
+/* 이번시즌 스터디*/
+.studyInfo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.studyInfo span{
+    display: flex;
+    justify-content: center;
+    color: #ff6b00;
+    font-size: 48px;
+    font-weight: bold;
+    
+}
+.boxs{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 80px 150px;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.boxTitle{
+    background-color: #FF6000;
+    height: 70px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.boxContent{
+    color: #000;
+    display: flex;
+    width: 300px;
+    flex-direction: row;
+    background-color: white;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
 .Review-container {
-  font-size: 35px;  
+  font-size: 15px;
   margin: auto;
   background-color: #000;
   color: #ff6a00;
   text-align: center;
   border-radius: 10px;
+  margin-top: 80px;
 }
-.Review-container h2{
-    margin-top: 10px;
+
+.Review-container h2 {
+  margin-top: 10px;
+  font-size: 48px;
 }
 
 .review-btn {
-    background-color: #ff6a00;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 300px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    
+  background-color: #ff6a00;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 80px;
+}
+
+.review-form {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6); 
+  z-index: 1000;
+}
+
+.form-content {
+  background-color: rgb(246, 245, 245);
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  position: relative;
+  padding: 5px 30px 30px 30px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0 20px 0;
+}
+
+.form-content label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.form-content textarea {
+  width: 382.4px;
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.form-content select {
+  width: 400px;
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background-color: #ff6a00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap:30px;
+  margin-bottom: 20px;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  text-align: left;
+}
+
+.review-card .review-type {
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review-card .review-text {
+  margin-top: 10px;
+  white-space: pre-wrap;
 }
 
 .footer {

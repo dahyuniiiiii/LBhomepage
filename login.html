@@ -28,11 +28,9 @@
             <label><input type="checkbox"> 로그인 상태 유지</label>
         </div>
       <div class="btns">
-        <a href="./index.html"> <!-- 잠시넣음 -->
         <button class="login-btn" onclick="login()">로그인</button>
                 </a>
-                <a href="./register.html"> <!-- 잠시넣음 -->
-        <button class="register-btn">회원가입</button>
+        <a href="register.html">><button class="register-btn">회원가입</button></a>
         </a>
       </div>
       </div>
@@ -53,10 +51,11 @@
       const id = document.getElementById('id').value;
       const password = document.getElementById('password').value;
 
-      fetch('http://localhost:9090/login', {
+      fetch("http://localhost:9090/api/member/login", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, password })
+        body: JSON.stringify({ userId: id, password }),
+         credentials: 'include'
       })
       .then(res => {
         if (!res.ok) throw new Error('로그인 실패');
