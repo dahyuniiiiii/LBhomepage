@@ -124,30 +124,33 @@
 
     <div class="Review-container">
         <h2>Reviews</h2>
+        <div style="margin-bottom: 40px;"></div> <!-- 간격 추가 -->
+        <div id="reviewList" class="review-list"></div>
         <button class="review-btn" onclick="openForm()">리뷰 작성하기</button>
     </div>
 
-  
     <div class="review-form" id="reviewForm">
         <div class="form-content"> 
         <div class="form-header">
             <h3>스터디 리뷰 작성</h3>
             <span class="close-btn" onclick="closeForm()">×</span>
         </div>
+        <hr class="form-divider" />
 
         <label for="studyType">스터디 유형</label>
         <select id="studyType">
-            <option>스터디 선택</option>
-            <option>코딩테스트 스터디</option>
-            <option>기술블로그 스터디</option>
-            <option>포토폴리오 제작 스터디</option>
-            <option>HTML 미니해커톤</option>
-            <option>5월 js 미니해커톤</option>
-            <option>js프로젝트 스터디</option>
+            <option value=""disabled selected>스터디 유형</option>
+            <option value="코딩테스트 스터디">코딩테스트 스터디</option>
+            <option value="기술블로그 스터디">기술블로그 스터디</option>
+            <option value="포토폴리오 제작 스터디">포토폴리오 제작 스터디</option>
+            <option value="HTML 미니해커톤">HTML 미니해커톤</option>
+            <option value="5월 js 미니해커톤">5월 js 미니해커톤</option>
+            <option value="js프로젝트 스터디">js프로젝트 스터디</option>
         </select>
 
-        <label for="reviewText">후기</label>
-        <textarea id="reviewText" rows="5" placeholder="후기를 입력하세요."></textarea>
+        <label for="reviewText">후기작성</label>
+        <textarea id="reviewText" rows="5" maxlength="250" placeholder="상세한 후기를 작성해주세요."></textarea>
+        <div class="char-counter" id="charCounter">0 / 250자</div>
 
         <button class="submit-btn">리뷰 등록</button>
         </div>
