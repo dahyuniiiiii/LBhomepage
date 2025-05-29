@@ -10,7 +10,7 @@ nav {
     padding: 8px 40px;
     border-bottom: 1px solid #616161;
 }
-.nav_logo > img{
+.nav_logo > a > img{
     width: 40%;
 }
 .nav_menu {
@@ -20,6 +20,8 @@ nav {
     color: white;
     padding: 20px 30px;
     text-decoration-line: none;
+    font-weight: bold;
+    font-size: 21px;
 }
 .nav_btn {
     display: flex;
@@ -27,6 +29,29 @@ nav {
     padding: 5px 20px;
     border-radius: 5px;
     font-weight: bold;
+    height: 40px;
+    width: 110px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+.popup {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    background-color: #2D2D2D;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    display: none;
+}
+
+.popup .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
 }
 .archive-section{
     display: flex;

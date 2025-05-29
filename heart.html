@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./heart.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav_logo">
+            <a href="./index.html"><img src="./image/logo.png"></a>
+        </div>
+        <div class="nav_menu">
+            <a href="review.html">Study</a>
+            <a href="heart.html">Heart Pop</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="login.html"><button class="nav_btn">로그인</button></a>
+        </div>
+    </nav>
+
+
+    <section class="top">
+        <p class="orange-text">백대 멋사, 맘에 들면 하트를 꾸욱 눌러주세요!</p>
+        <p class="bold">하트를 누를수록 우리 사이는 더 가까워져요</p>
+        <div class="wrapper">
+            <div class="container">
+                <img id="mainHeart" class="heart-img" onclick="explodeHearts()" src="./image/heart.png">
+            </div>
+            <button onclick="showHeart()" id="heartBtn" class="pushBtn">하트 누르기</button>
+        </div>
+        <p id="date" class="bold">test</p>
+        <p id="count" class="bold">총 0개 마음이 도착했어요</p>
+        <p class="small">누르는 횟수에는 제한이 없어요</p>
+        <div class="input-container">
+            <input id="heartContent" class="type" type="text" placeholder="당신의 마음을 댓글로 전해주세요.">
+            <img class="send" src="./image/send.png">
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer_top"><strong style="font-size: 30px;">BU LIKELION</strong>
+                <a href="https://www.instagram.com/"><img src="./image/footer_lnstagram_logo.png" alt="인스타그램"></a>
+                <a href="https://www.likelion.net/"><img src="./image/footer_likelion_logo.png" alt="멋쟁이사자처럼"></a>
+            </div>
+            <a class="footer_bottom">
+                @ 2025 BU LIKELION STUDY. All rights reserved.
+            </a>
+        </div>
+    </footer>
+</body>
+<script>
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    document.getElementById("date").innerText = `${year}년 ${month}월 ${day}일`;
+
+    var container = document.querySelector('.container')
+
+    container.addEventListener('mousemove', function (e) {
+        var x = e.offsetX
+        var y = e.offsetY
+        var rotateY = -1 / 5 * x + 20
+        var rotateX = 4 / 30 * y - 20
+
+        container.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    })
+
+    container.addEventListener('mouseout', function () {
+        container.style = 'transform : perspective(350px) rotateY(0deg) rotateX(0deg)'
+    })
+
+    let Count = 0;
+
+    function showHeart() {
+        const button = document.getElementById('heartBtn');
+        const wrapper = document.querySelector('.wrapper');
+        const rect = button.getBoundingClientRect();
+        const heartCount = 7;
+        Count++;
+        document.getElementById('count').innerText = `총 ${Count}개 마음이 도착했어요`
+
+
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+
+        const hearts = ['❤️'];
+        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+
+        // 버튼 중심을 기준으로 위치 지정
+        heart.style.left = button.offsetLeft + button.offsetWidth / 2 + (Math.random() * 40 - 20) + 'px';
+        heart.style.top = button.offsetTop - 10 + 'px'; // 버튼 위에서 시작
+
+        heart.style.fontSize = (20 + Math.random() * 10) + 'px';
+
+        wrapper.appendChild(heart);
+        setTimeout(() => heart.remove(), 1000);
+
+
+        const mainHeart = document.getElementById('mainHeart');
+        mainHeart.classList.add('spin-once');
+        setTimeout(() => {
+            mainHeart.classList.remove('spin-once'); // 다음 클릭을 위한 제거
+        }, 800);
+    }
+
+    function explodeHearts() {
+        const wrapper = document.querySelector('.wrapper');
+        const heartImg = document.getElementById('mainHeart');
+        const rect = heartImg.getBoundingClientRect();
+        const heartCount = 10;
+
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart2');
+
+            const hearts = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
+            heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+
+            // 위치: 이미지 중심 기준
+            const imgX = heartImg.offsetLeft + heartImg.offsetWidth / 2;
+            const imgY = heartImg.offsetTop + heartImg.offsetHeight / 2;
+
+            heart.style.left = imgX + 'px';
+            heart.style.top = imgY + 'px';
+
+            // CSS 변수로 방향 랜덤 설정 (x, y 방향 퍼짐)
+            const angle = Math.random() * 2 * Math.PI;
+            const distance = 60 + Math.random() * 150;
+            const x = Math.cos(angle) * distance + 'px';
+            const y = -Math.abs(Math.sin(angle) * distance) + 'px'; // 위쪽으로만
+
+            heart.style.setProperty('--x', x);
+            heart.style.setProperty('--y', y);
+
+            wrapper.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        }
+    }
+
+
+
+    const heartData = {
+        heartContent: heart
+    };
+    function heart() {
+        const heart = document.getElementById('heartContent').value
+
+        fetch('http://localhost:9090/api/heart', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ heart })
+        })
+    }
+</script>
+
+</html>

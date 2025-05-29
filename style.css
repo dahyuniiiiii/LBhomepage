@@ -10,7 +10,7 @@ nav {
     padding: 8px 40px;
     border-bottom: 1px solid #616161;
 }
-.nav_logo > img{
+.nav_logo > a > img{
     width: 40%;
 }
 .nav_menu {
