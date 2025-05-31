@@ -36,23 +36,17 @@ nav {
     justify-content: center;
     font-size: 16px;
 }
-.popup {
-    position: fixed;
-    top: 110px;
-    right: 20px;
-    background-color: #2D2D2D;
-    color: white;
-    padding: 16px 24px;
-    border-radius: 10px;
-    display: none;
+.archive-section::before {
+  content: "";
+  background: url('./image/image\ 45.png') no-repeat center center/cover;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
-.popup .closeBtn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-}
+
 .archive-section{
     display: flex;
     flex-direction: column;
@@ -72,12 +66,14 @@ nav {
     color: hsl(25, 100%, 50%);
     font-size: 48px;
     margin-top: 150px;
+      z-index: 1;
 }
 
 .description {
     font-size: 18px;
     color: #ddd;
     font-weight: bold;
+      z-index: 1;
 }
 
 .standard-title {

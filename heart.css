@@ -67,7 +67,7 @@ nav {
     font-size: 16px;
     color: white;
     padding-bottom: 20px;
-}
+}                     
 
 .heart {
     width: 276px;
@@ -104,6 +104,7 @@ nav {
     border-radius: 35px;
     font-size: 24px;
     padding-right: 40px;
+    z-index: 0;
 }
 
 .type::placeholder {
@@ -138,7 +139,9 @@ nav {
     display: flex;
     justify-content: center;
 }
-
+.send{
+     z-index: 0;
+}
 @keyframes popUp {
     0% {
         opacity: 1;
