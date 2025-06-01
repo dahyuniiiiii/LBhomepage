@@ -13,27 +13,31 @@ nav {
     padding: 8px 40px;
     border-bottom: 1px solid #616161;
 }
-
-.nav_logo > img {
+.nav_logo > a > img{
     width: 40%;
 }
-
 .nav_menu {
     display: flex;
 }
-
 .nav_menu a {
     color: white;
     padding: 20px 30px;
     text-decoration-line: none;
+    font-weight: bold;
+    font-size: 21px;
 }
-
 .nav_btn {
     display: flex;
     background-color: #FF6000;
     padding: 5px 20px;
     border-radius: 5px;
     font-weight: bold;
+    height: 40px;
+    width: 110px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
 }
 
 /* contributors */
