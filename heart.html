@@ -36,7 +36,8 @@
         <p class="small">누르는 횟수에는 제한이 없어요</p>
         <div class="input-container">
             <input id="heartContent" class="type" type="text" placeholder="당신의 마음을 댓글로 전해주세요.">
-            <img class="send" src="./image/send.png">
+            <button onclick="addContent()"><img class="send" src="./image/send.png"></button>
+            <ul id="heartList" class="comment-list"></ul>
         </div>
     </section>
 
@@ -58,7 +59,6 @@
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
     const day = today.getDate();
-
     document.getElementById("date").innerText = `${year}년 ${month}월 ${day}일`;
 
     var container = document.querySelector('.container')
@@ -81,8 +81,6 @@
     function showHeart() {
         const button = document.getElementById('heartBtn');
         const wrapper = document.querySelector('.wrapper');
-        const rect = button.getBoundingClientRect();
-        const heartCount = 7;
         Count++;
         document.getElementById('count').innerText = `총 ${Count}개 마음이 도착했어요`
 
@@ -90,9 +88,7 @@
         const heart = document.createElement('div');
         heart.classList.add('heart');
 
-        const hearts = ['❤️'];
-        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
-
+        heart.innerText = '❤️';
         // 버튼 중심을 기준으로 위치 지정
         heart.style.left = button.offsetLeft + button.offsetWidth / 2 + (Math.random() * 40 - 20) + 'px';
         heart.style.top = button.offsetTop - 10 + 'px'; // 버튼 위에서 시작
@@ -113,16 +109,12 @@
     function explodeHearts() {
         const wrapper = document.querySelector('.wrapper');
         const heartImg = document.getElementById('mainHeart');
-        const rect = heartImg.getBoundingClientRect();
         const heartCount = 10;
 
         for (let i = 0; i < heartCount; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart2');
-
-            const hearts = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
-            heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
-
+            heart.innerText = '❤️';
             // 위치: 이미지 중심 기준
             const imgX = heartImg.offsetLeft + heartImg.offsetWidth / 2;
             const imgY = heartImg.offsetTop + heartImg.offsetHeight / 2;
@@ -143,21 +135,47 @@
             setTimeout(() => heart.remove(), 1000);
         }
     }
+    function addContent() {
+        const content = document.getElementById('heartContent').value;
+        if (!content.trim()) {
+            alert('내용을 입력하세요');
+            return;
+        }
 
-
-
-    const heartData = {
-        heartContent: heart
-    };
-    function heart() {
-        const heart = document.getElementById('heartContent').value
-
-        fetch('http://localhost:9090/api/heart', {
+        fetch('http://localhost:9090/api/heart/heartWrite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ heart })
+            body: JSON.stringify({ content })
         })
+            .then(res => {
+                if (!res.ok) throw new Error('댓글 등록 실패');
+                return res.text();
+            })
+            .then(msg => {
+                alert(msg);
+                document.getElementById('heartContent').value = ''; //입력창 초기화
+                loadHeartList(); //새로고침x
+            })
+            .catch(err => {
+                alert('댓글 등록 실패: ' + err.message);
+            });
     }
+
+    function loadHeartList() {
+        fetch('http://localhost:9090/api/heart/heartlist')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('heartList');
+                list.innerHTML = ''; 
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item.content;
+                    list.appendChild(li);
+            });
+            });
+    }
+    window.onload = loadHeartList;
+
 </script>
 
 </html>
