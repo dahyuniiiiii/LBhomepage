@@ -37,7 +37,7 @@
         <div class="input-container">
             <input id="heartContent" class="type" type="text" placeholder="당신의 마음을 댓글로 전해주세요.">
             <button onclick="addContent()"><img class="send" src="./image/send.png"></button>
-            <ul id="heartList" class="comment-list"></ul>
+            <ul style="color:white;" id="heartList" class="comment-list"></ul>
         </div>
     </section>
 
@@ -95,7 +95,7 @@
 
         heart.style.fontSize = (20 + Math.random() * 10) + 'px';
 
-        wrapper.appendChild(heart);
+        wrapper.appendChild(하트);
         setTimeout(() => heart.remove(), 1000);
 
 
@@ -131,7 +131,7 @@
             heart.style.setProperty('--x', x);
             heart.style.setProperty('--y', y);
 
-            wrapper.appendChild(heart);
+            wrapper.appendChild(하트);
             setTimeout(() => heart.remove(), 1000);
         }
     }
@@ -142,7 +142,7 @@
             return;
         }
 
-        fetch('http://localhost:9090/api/heart/heartWrite', {
+        fetch('http://localhost:9090/api/study/heartWrite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ content })
@@ -161,19 +161,23 @@
             });
     }
 
-    function loadHeartList() {
-        fetch('http://localhost:9090/api/heart/heartlist')
-            .then(res => res.json())
-            .then(data => {
-                const list = document.getElementById('heartList');
-                list.innerHTML = ''; 
-                data.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item.content;
-                    list.appendChild(li);
+   function loadHeartList() {
+
+    fetch('http://localhost:9090/api/study/heartList')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            const list = document.getElementById('heartList');
+            list.innerHTML = '';
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.heartContent;
+                list.appendChild(li);
             });
-            });
-    }
+        })
+}
+
     window.onload = loadHeartList;
 
 </script>
