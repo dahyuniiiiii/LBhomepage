@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Heart Pop</title>
     <link rel="stylesheet" href="./heart.css">
 </head>
 
@@ -36,7 +36,7 @@
         <p class="small">누르는 횟수에는 제한이 없어요</p>
         <div class="input-container">
             <input id="heartContent" class="type" type="text" placeholder="당신의 마음을 댓글로 전해주세요.">
-            <button onclick="addContent()"><img class="send" src="./image/send.png"></button>
+            <button onclick="addContent()" class="sendBtn"><img class="send" src="./image/send.png"></button>
             <ul style="color:white;" id="heartList" class="comment-list"></ul>
         </div>
     </section>
@@ -55,6 +55,11 @@
     </footer>
 </body>
 <script>
+    window.onload = function () {
+    loadHeartCount();
+    loadHeartList();
+    };
+
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
@@ -79,11 +84,19 @@
     let Count = 0;
 
     function showHeart() {
+        fetch('http://localhost:9090/api/study/heartClick', {
+        method: 'POST'
+    })
+    .then(res => res.json())
+    .then(data => {
+        Count = data.count;
+        document.getElementById('count').innerText = `총 ${Count}개 마음이 도착했어요`;
+    })
+    .catch(err => {
+        alert('하트 누르기 실패: ' + err.message);
+    });
         const button = document.getElementById('heartBtn');
         const wrapper = document.querySelector('.wrapper');
-        Count++;
-        document.getElementById('count').innerText = `총 ${Count}개 마음이 도착했어요`
-
 
         const heart = document.createElement('div');
         heart.classList.add('heart');
@@ -95,7 +108,7 @@
 
         heart.style.fontSize = (20 + Math.random() * 10) + 'px';
 
-        wrapper.appendChild(하트);
+        wrapper.appendChild(heart);
         setTimeout(() => heart.remove(), 1000);
 
 
@@ -131,7 +144,7 @@
             heart.style.setProperty('--x', x);
             heart.style.setProperty('--y', y);
 
-            wrapper.appendChild(하트);
+            wrapper.appendChild(heart);
             setTimeout(() => heart.remove(), 1000);
         }
     }
@@ -160,8 +173,19 @@
                 alert('댓글 등록 실패: ' + err.message);
             });
     }
+function loadHeartCount() {
+    fetch('http://localhost:9090/api/study/heartCount')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('count').innerText = `총 ${data.count}개 마음이 도착했어요`;
+            Count = data.count;
+        })
+        .catch(err => {
+            console.error('하트 개수 불러오기 실패:', err);
+        });
+}
 
-   function loadHeartList() {
+    function loadHeartList() {
 
     fetch('http://localhost:9090/api/study/heartList')
         .then(res => {
@@ -176,9 +200,13 @@
                 list.appendChild(li);
             });
         })
+        .catch(
+            err => console.error('하트 수 불러오기 실패:', err)
+            );
 }
 
-    window.onload = loadHeartList;
+
+
 
 </script>
 
