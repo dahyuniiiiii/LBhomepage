@@ -196,7 +196,21 @@ nav {
   font-size: 18px;
   margin-bottom: 80px;
 }
-
+.reviewImg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+    margin-bottom: 100px;
+}
+.reviewImg img {
+  width: 500px; 
+  height: auto;
+  object-fit: cover;
+}
 .review-form {
   display: none;
   justify-content: center;
@@ -309,7 +323,6 @@ nav {
   margin-top: 10px;
   white-space: pre-wrap;
 }
-
 .footer {
     display: flex;
     flex-direction: column;
