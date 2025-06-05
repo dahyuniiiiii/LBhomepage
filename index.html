@@ -21,7 +21,7 @@
             <a href="review.html">Study</a>
             <a href="heart.html">Heart Pop</a>
             <a href="contributors.html">Contributors</a>
-            <a href="login.html"><button class="nav_btn">로그인</button></a>
+            <a href="login.html"><button class="nav_btn" id="loginBtn">로그인</button></a>
         </div>
     </nav>
     <div class="study_info">
@@ -53,12 +53,16 @@
         <h2 class="gallery-title">13기 프로젝트 갤러리</h2>
         <p class="gallery-sub-title">함께 만든 시간, 함께 남기는 기록</p>
         <div style="display: flex; justify-content: center; margin-top: 10px;">
-            <div class="img-box">
-                <img src="./image/sagopalgo.png" class="inner-img">
-                <p class="project-name">Sagopalgo</p>
-                <p class="project-exp">편리하고 안전한 중고거래를 위한 웹사이트</p>
+            <div class="img-box" >
+                <img src="./image/sagopalgo.png" class="inner-img" onclick="showModal1()">
+                <p class="project-name" onclick="showModal1()">Sagopalgo</p>
+                <p class="project-exp" onclick="showModal1()">누구나 상품을 사고 팔 수 있는 중고거래 플랫폼</p>
             </div>
-            <div class="img-box"></div>
+            <div class="img-box">
+                <img src="./image/purplex.png" class="inner-img" onclick="showModal2()">
+                <p class="project-name" onclick="showModal2()">Purplex</p>
+                <p class="project-exp" onclick="showModal2()">남성 위주의 쇼핑몰 웹사이트</p>
+            </div>
             <div class="img-box"></div>
         </div>
         <div style="display: flex; justify-content: center;">
@@ -67,6 +71,87 @@
             <div class="img-box"></div>
         </div>
     </div>
+<div id="projectModal" class="projectModal" style="display: none;">
+    <div class="modalBox">
+        <span class="modalClose" onclick="closeModal1()">&times;</span>
+        <div class="modalContent">
+            <span class="modalTitle">Sagopalgo</span>
+            <div class="modalSection">
+                <h3 class="modalLabel">프로젝트 설명</h3>
+                <p class="modalText">
+                    HTML,CSS,JS를 기반으로 한 웹사이트 제작 프로젝트로,<br>
+                    기획, 디자인, 개발의 전 과정을 실제 서비스 개발 흐름에 맞춰 직접 수행하고<br>
+                    직관적인 기능과 멋사의 메인 색을 반영한 ui로 완성도를 높였습니다.
+                </p>
+            </div>
+            <div class="modalSection">
+                <h3 class="modalLabel">프로젝트 기간</h3>
+                <p class="modalText">2025.04.12 ~ 2025.05.17</p>
+            </div>
+            <div class="modalSection">
+                <div class="modalBottom">
+                    <span class="modalLabel">기획</span>
+                    <span class="modalText" style="padding-left: 15px;">오다현</span>
+                </div>
+            <div class="modalBottom"> 
+                <span class="modalLabel">디자인</span>
+                <span class="modalText" style="padding-left: 15px;">장하늘</span>
+            </div>
+            <div class="modalBottom">
+                <span class="modalLabel">프론트엔드</span>
+                <span class="modalText" style="padding-left: 15px;">오다현, 정세진, 최명진, 장하늘</span>
+            </div>
+                <span class="modalLabel">기술 스택</span>
+                <span class="modalText" style="padding-top: 5px;">HTML, CSS, JAVASCRIPT, Figma, Git, GITHUB</span>
+            </div>
+            <p>   
+                <a style="color:white; cursor:pointer;" href="https://github.com/dahyuniiiiii/Sagopalgo">깃허브 바로가기</a>
+                <a style="color:white; cursor:pointer;" href="https://dahyuniiiiii.github.io/Sagopalgo/">홈페이지 바로가기</a>
+            </p>
+        </div>
+    </div>
+</div>
+<div id="projectModal2" class="projectModal" style="display: none;">
+    <div class="modalBox">
+        <span class="modalClose" onclick="closeModal2()">&times;</span>
+        <div class="modalContent">
+        <span class="modalTitle">Purplex</span>
+
+        <div class="modalSection">
+            <h3 class="modalLabel">프로젝트 설명</h3>
+            <p class="modalText">
+            HTML, CSS, JS를 사용하여 만든 단기성 프로젝트로, 요즘 남성들이<br> 
+            패션 트렌드에 민감해지는 사용자 니즈에 맞춰서 고급스러움을 상징하는<br> 
+            보라색의 Purple와 소비하는 속어인 Flex를 결합하여 만든<br>
+            남성 위주의 쇼핑몰 웹사이트입니다.
+            </p>
+        </div>
+
+        <div class="modalSection">
+            <h3 class="modalLabel">프로젝트 기간</h3>
+            <p class="modalText">2025.04.12 ~ 2025.04.16</p>
+        </div>
+
+        <div class="modalSection">
+            <div class="modalBottom">
+            <span class="modalLabel">기획</span>
+            <span class="modalText" style="padding-left: 15px;">김충</span>
+            </div>
+            <div class="modalBottom">
+            <span class="modalLabel">디자인</span>
+            <span class="modalText" style="padding-left: 15px;">곽예주</span>
+            </div>
+            <div class="modalBottom">
+            <span class="modalLabel">프론트엔드</span>
+            <span class="modalText" style="padding-left: 15px;">김충, 곽예주, 정윤재, 정예준</span>
+            </div>
+            <span class="modalLabel">기술 스택</span>
+            <span class="modalText" style="padding-top: 5px;">HTML, CSS, JavaScript, Git, GitHub</span>
+        </div>
+        </div>
+    </div>
+    </div>
+
 <div class="aboutus">
         <section class="intro">
         <a style="font-size: 64px; font-weight:bold; color:#FF6000;padding-bottom:20px;">About us</a>
@@ -174,6 +259,6 @@
             </a>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
